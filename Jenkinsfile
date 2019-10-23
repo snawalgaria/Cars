@@ -1,7 +1,6 @@
 node {
+	stage('Clone repo') {
+	sh " echo 'Cloning Repository' "
 	checkout scm
-	sh """
-	echo "Hello World"
-	cat Jenkinsfile
-	"""
+	}
 }
