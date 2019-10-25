@@ -13,7 +13,7 @@
 
 pipeline {
         environment {
-    registry = "https://dockerhub.com/andreleoni/cnn-tensorflow"
+    registry = "https://index.docker.io/v1/"
     registryCredential = 'docker_cred_1'
   }
     agent none
