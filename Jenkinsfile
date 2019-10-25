@@ -12,23 +12,27 @@
 }*/
 
 pipeline {
+        environment {
+    registry = "https://dockerhub.com/andreleoni/cnn-tensorflow"
+    registryCredential = 'docker_cred_1'
+  }
     agent none
     stages {
         stage('Back-end') {
             agent {
-                docker { image 'maven:3-alpine' }
+                docker { image 'cnn-tensorflow:latest' }
             }
             steps {
                 sh 'mvn --version'
             }
         }
-        stage('Front-end') {
+        /*stage('Front-end') {
             agent {
                 docker { image 'node:7-alpine' }
             }
             steps {
                 sh 'node --version'
             }
-        }
+        }*/
     }
 }
